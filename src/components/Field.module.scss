@@ -1,0 +1,55 @@
+$cageSize: 400px;
+
+.field {
+  width: $cageSize;
+  height: $cageSize;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  background-color: rgb(236, 255, 233);
+
+  .cage {
+    width: calc($cageSize / 10);
+    height: calc($cageSize / 10);
+    border: 1px solid rgb(211, 211, 211);
+    box-sizing: border-box;
+  }
+
+  .shipCage {
+    background-color: rgb(94, 94, 94);
+  }
+  .hitCage {
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 0 10px 7px inset rgb(94, 94, 94);
+  }
+  .missCage {
+    background-color: rgb(94, 94, 94);
+    box-shadow: 0 0 15px 10px inset rgb(236, 255, 233);
+  }
+  .lastHitCage {
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 0 10px 7px inset rgb(0, 0, 0);
+  }
+  .lastMissCage {
+    background-color: rgb(94, 94, 94);
+    box-shadow: 0 0 15px 10px inset rgb(205, 255, 198);
+  }
+  .tempCage {
+    background-color: rgb(255, 247, 174);
+  }
+}
+
+.enemyField {
+  border: 2px solid rgb(255, 124, 124);
+  box-shadow: 0 0 5px rgb(255, 124, 124);
+}
+
+.myField {
+  border: 2px solid rgb(132, 189, 255);
+  box-shadow: 0 0 5px rgb(132, 189, 255);
+}
+
+.fieldNonActive {
+  border: 2px solid rgb(170, 170, 170);
+  box-shadow: 0 0 5px rgb(170, 170, 170);
+}

@@ -1,0 +1,51 @@
+$cageSize: 400px;
+
+.field {
+  margin-top: 50px;
+  width: $cageSize;
+  height: 100px;
+  display: flex;
+  box-sizing: content-box;
+  background-color: rgb(236, 255, 233);
+
+  .ship {
+    width: calc($cageSize/4);
+    height: calc($cageSize/4);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    user-select: none;
+  }
+
+  .shipPreparing {
+    transition: 0.2s;
+  }
+
+  .shipPreparing:hover {
+    box-shadow: 0 0 5px inset;
+    cursor: pointer;
+  }
+
+  .activeShip {
+    box-shadow: 0 0 5px inset;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.activeField {
+  border: 2px solid rgb(170, 170, 170);
+  box-shadow: 0 0 5px rgb(170, 170, 170);
+}
+
+.enemyField {
+  border: 2px solid rgb(255, 124, 124);
+  box-shadow: 0 0 5px rgb(255, 124, 124);
+}
+
+.myField {
+  border: 2px solid rgb(132, 189, 255);
+  box-shadow: 0 0 5px rgb(132, 189, 255);
+}

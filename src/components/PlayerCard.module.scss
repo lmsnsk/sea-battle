@@ -1,0 +1,17 @@
+.card {
+  background-color: rgb(58, 61, 90);
+  font-size: 18px;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  box-shadow: 0 0 5px black;
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+
+  .place {
+    font-size: 28px;
+    font-weight: 600;
+  }
+}
