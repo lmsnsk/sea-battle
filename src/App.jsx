@@ -8,6 +8,7 @@ import MyStats from "./pages/MyStats.jsx";
 import Header from "./components/Header.jsx";
 import BestPlayers from "./pages/BestPlayers.jsx";
 import { getData } from "./helpers/functions.js";
+import preloader from "./assets/img/preloader.gif";
 
 import style from "./App.module.scss";
 
@@ -56,6 +57,7 @@ let state = {
 
 function App() {
   const [isAuth, setAuth] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   const [isStartBattle, setStartBattle] = useState(false);
   const [successReg, setSuccessReg] = useState(false);
   const [userId, setUserId] = useState(null);
@@ -80,17 +82,27 @@ function App() {
     const get = async () => {
       const data = await getData(HOSTNAME + "session-check");
       if (data && data.success) setAuth(true);
-      if (!isAuth) {
-        navigate("/signIn");
-      } else {
-        navigate("/");
+      if (isLoading) {
+        if (!isAuth) {
+          navigate("/signIn");
+        } else {
+          navigate("/");
+        }
       }
+      setLoading(true);
     };
     get();
-  }, [isAuth, navigate]);
+  }, [isAuth, navigate, isLoading]);
+
+  if (!isLoading)
+    return (
+      <div className={style.content}>
+        <img src={preloader} alt="" />
+      </div>
+    );
 
   return (
-    <div className={style.App}>
+    <div>
       <Header
         isAuth={isAuth}
         setAuth={setAuth}

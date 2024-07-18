@@ -1,6 +1,12 @@
+img {
+  width: 80px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+}
+
 .content {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
